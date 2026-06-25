@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صفحتي التجريبية</title>
+<style>
+    body {
+        font-family: 'Tahoma', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    button {
+        background: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    button:hover {
+        background: #ff8787;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .box {
+        background: rgba(255,255,255,0.2);
+        padding: 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <h1 id="title">مرحبا بيك فصفحتي! 🎉</h1>
+        <p id="text">هادي صفحة HTML + CSS + JS خدامة 100%</p>
+        <button onclick="changeText()">كليكي هنا</button>
+    </div>
+
+<script>
+    let clickCount = 0;
+    function changeText() {
+        clickCount++;
+        const title = document.getElementById('title');
+        const text = document.getElementById('text');
+        const btn = document.querySelector('button');
+        
+        if(clickCount === 1) {
+            title.textContent = 'تبارك الله عليك! 👏';
+            text.textContent = 'الصفحة ديالك طلعات فالإنترنت بنجاح';
+            btn.style.background = '#51cf66';
+        } else if(clickCount === 2) {
+            title.textContent = 'GitHub Pages خدام! 🔥';
+            text.textContent = 'دابا صيفطي الرابط لأي واحد';
+            btn.style.background = '#339af0';
+        } else {
+            title.textContent = 'مرحبا بيك فصفحتي! 🎉';
+            text.textContent = 'هادي صفحة HTML + CSS + JS خدامة 100%';
+            btn.style.background = '#ff6b6b';
+            clickCount = 0;
+        }
+    }
+</script>
+</body>
+</html>
